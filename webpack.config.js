@@ -1,19 +1,17 @@
-const webpack = require('webpack');
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const config = {
-  entry: './src/index.js',
+
+module.exports = {
+  entry: './src/main.js',
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: 'app.js',
+    path: `${__dirname}/dist`,
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      templateContent: ({ htmlWebpackPlugin }) => '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><title>' + htmlWebpackPlugin.options.title + '</title></head><body><div id=\"app\"></div></body></html>',
-      filename: 'index.html',
-    })
-  ]
+  devServer: {
+    contentBase: './dist',
+    hot: true,
+  },
+  plugins: [new HtmlWebpackPlugin({
+    template: './src/index.html'
+  })]
 };
-
-module.exports = config;

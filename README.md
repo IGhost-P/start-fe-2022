@@ -1,33 +1,11 @@
-# start-fe-final
+# test-webpack
 
-Empty project.
 
-## Building and running on localhost
+## 실행방법
 
-First install dependencies:
-
-```sh
-npm install
 ```
-
-To create a production build:
-
-```sh
-npm run build-prod
+$ git clone https://github.com/advanced-webapps-class/test-webpack
+$ cd test-webpack
+$ npm install
+$ npm start
 ```
-
-To create a development build:
-
-```sh
-npm run build-dev
-```
-
-## Running
-
-```sh
-node dist/bundle.js
-```
-
-## Credits
-
-Made with [createapp.dev](https://createapp.dev/)
