@@ -1,4 +1,4 @@
-[
+export const classData = [
     {
       "title": "수업소개",
       "docUrl": "https://start-fe.surge.sh",

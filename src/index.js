@@ -1,2 +1,7 @@
 import "./app.css";
-console.log("app is running");
+import { $ } from "./utils/selector";
+import App from "./app";
+
+const $target = $("body");
+
+new App({ $target });

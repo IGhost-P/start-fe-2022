@@ -30,7 +30,7 @@ const config = {
       },
     ],
   },
-  devtool: "eval-cheap-module-source-map",
+  devtool: false,
   target: "web",
   devServer: {
     static: {
