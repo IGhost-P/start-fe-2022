@@ -1,4 +1,4 @@
-[
+export const quizData = [
     {
       "title": "이미지 슬라이드",
       "docUrl": "https://gist.github.com/niceaji/640626074018a93ab4bced4dd9bdcf95",

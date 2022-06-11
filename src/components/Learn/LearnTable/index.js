@@ -24,9 +24,17 @@ export function LearnTable({ $target, initialState }) {
             <th scope="row">${idx + 1}</th>
             <td>${item.title}</td>
             <td>
-              <a href="${item.docUrl}" class="badgebg-secondary">문서</a>
+              <a href="${item.docUrl}" class="badge bg-secondary">문서</a>
               </td>
-              <td></td>
+              <td>
+                ${item.links
+                  .map(
+                    (link, idx) => `
+                <a href="${link}" class="badge bg-secondary">${idx + 1}</a>
+                `
+                  )
+                  .join("")}
+              </td>
               <td>${item.date}</td>
               <td>
                 <a href="${item.gitUrl}">git</a>

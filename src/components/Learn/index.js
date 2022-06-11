@@ -16,7 +16,7 @@ export function Learn({ $target, initialState }) {
   };
 
   const learnTabel = new LearnTable({
-    $target: $(".table"),
+    $target: $(".table", $target),
     initialState: this.state.learnTableData,
   });
 }
