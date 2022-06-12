@@ -9,19 +9,18 @@ export function Learn({ $target, initialState }) {
     tag: "",
   };
 
-  console.log(this.state.learnTableData);
-
   this.setState = (nextState) => {
     this.state = { ...this.state, ...nextState };
+    learnTable.setState(this.state.learnTableData);
   };
 
-  const learnTabel = new LearnTable({
+  const learnTable = new LearnTable({
     $target: $(".table", $target),
     initialState: this.state.learnTableData,
   });
 
   this.init = async () => {
-    const learnTableData = await fetchData();
+    const learnTableData = await fetchData("./classData.json");
     this.setState({ learnTableData });
   };
 

@@ -1,20 +1,28 @@
 import { QuizTable } from "../../components/index";
-import { quizData } from "../../constants/quiz";
 import { $ } from "../../utils/selector";
+import { fetchData } from "../../utils/api";
 export function Quiz({ $target, initialState }) {
   console.log("Quizis running");
 
   this.state = {
-    quizTableData: quizData,
+    quizTableData: [],
     tag: "",
   };
 
   this.setState = (nextState) => {
     this.state = { ...this.state, ...nextState };
+    quizTable.setState(this.state.quizTableData);
   };
 
-  const learnTabel = new QuizTable({
+  const quizTable = new QuizTable({
     $target: $(".table", $target),
     initialState: this.state.quizTableData,
   });
+
+  this.init = async () => {
+    const quizTableData = await fetchData("./quizData.json");
+    this.setState({ quizTableData });
+  };
+
+  this.init();
 }
