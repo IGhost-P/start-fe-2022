@@ -1,6 +1,5 @@
 import { $ } from "../../utils/selector";
 import { LearnTable } from "../../components/index";
-import { classData } from "../../constants/class";
 import { fetchData } from "../../utils/api";
 export function Learn({ $target, initialState }) {
   console.log("Learn is running");
@@ -22,7 +21,7 @@ export function Learn({ $target, initialState }) {
   });
 
   this.init = async () => {
-    const learnTableData = await fetchData("./src/constants/class.json");
+    const learnTableData = await fetchData();
     this.setState({ learnTableData });
   };
 
