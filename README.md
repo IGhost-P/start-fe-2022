@@ -1,7 +1,7 @@
 # start-fe-2022
 
 advanced-webapps-class : final exam
-2016108271 양상우 고급웹 중간과제 입니다.
+2016108271 양상우 고급웹 기말과제 입니다.
 
 # Result
 
