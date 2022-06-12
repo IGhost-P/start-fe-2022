@@ -33,6 +33,7 @@ const config = {
   devtool: false,
   target: "web",
   devServer: {
+    host: "localhost",
     static: {
       directory: path.resolve(__dirname, "dist"),
     },

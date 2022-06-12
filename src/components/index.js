@@ -7,3 +7,6 @@ export { LearnTable } from "./Learn/LearnTable";
 export { Quiz } from "./Quiz";
 export { QuizHeader } from "./Quiz/QuizHeader";
 export { QuizTable } from "./Quiz/QuizTable";
+
+// LoadingSpiner
+export { LoadingSpiner } from "./LoadingSpiner";

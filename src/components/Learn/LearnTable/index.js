@@ -1,5 +1,5 @@
 export function LearnTable({ $target, initialState }) {
-  console.log("Table is running");
+  console.log("LearnTable is running");
 
   this.state = initialState;
 

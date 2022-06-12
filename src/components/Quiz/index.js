@@ -1,4 +1,4 @@
-import { QuizTable, QuizHeader } from "../../components/index";
+import { QuizTable, QuizHeader, LoadingSpiner } from "../../components/index";
 import { $ } from "../../utils/selector";
 import { fetchData } from "../../utils/api";
 import { tagFilter } from "../../utils/tagFilter";
@@ -29,7 +29,11 @@ export function Quiz({ $target, initialState }) {
   });
 
   this.init = async () => {
+    new LoadingSpiner({
+      $target: $(".table", $target),
+    });
     const quizTableData = await fetchData("./quizData.json");
+    $target.querySelector(".spinner-box")?.remove();
     this.setState({ quizTableData });
   };
 

@@ -1,5 +1,5 @@
 import { $ } from "../../utils/selector";
-import { LearnTable, LearnHeader } from "../../components/index";
+import { LearnTable, LearnHeader, LoadingSpiner } from "../../components/index";
 import { fetchData } from "../../utils/api";
 import { tagFilter } from "../../utils/tagFilter";
 export function Learn({ $target, initialState }) {
@@ -27,8 +27,13 @@ export function Learn({ $target, initialState }) {
       this.setState({ tag });
     },
   });
+
   this.init = async () => {
+    new LoadingSpiner({
+      $target: $(".table", $target),
+    });
     const learnTableData = await fetchData("./classData.json");
+    $target.querySelector(".spinner-box")?.remove();
     this.setState({ learnTableData });
   };
 
