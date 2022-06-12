@@ -14,7 +14,9 @@ a.badge {
   justify-content: space-between;
 }
 
-.spinner-border {
+.spinner-box {
+  display: flex;
+  width: 100%;
   justify-content: center;
   align-items: center;
 }
