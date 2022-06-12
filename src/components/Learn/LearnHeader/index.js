@@ -1,11 +1,15 @@
 export function LearnHeader({ $target, initialState, onClick }) {
-  console.log("LearnHeader is running");
+  console.log("Header is running");
+
+  this.state = initialState;
 
   $target.addEventListener("click", (e) => {
     if (e.target.tagName === "BUTTON") {
       e.preventDefault();
-      const tag = e.target.innerText;
-      onClick(tag);
+      $target.querySelector(".active").classList.remove("active");
+      e.target.classList.add("active");
+      this.state = e.target.innerText;
+      onClick(this.state);
     }
   });
 }

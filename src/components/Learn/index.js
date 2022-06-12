@@ -7,7 +7,7 @@ export function Learn({ $target, initialState }) {
 
   this.state = {
     learnTableData: [],
-    tag: "",
+    tag: "모두",
   };
 
   this.setState = (nextState) => {
