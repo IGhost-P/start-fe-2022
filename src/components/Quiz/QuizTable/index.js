@@ -1,6 +1,4 @@
 export function QuizTable({ $target, initialState }) {
-  console.log("QuizTable is running");
-
   this.state = initialState;
 
   this.setState = (nextState) => {

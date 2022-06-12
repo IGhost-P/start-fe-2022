@@ -1,6 +1,4 @@
 export function LearnTable({ $target, initialState }) {
-  console.log("LearnTable is running");
-
   this.state = initialState;
 
   this.setState = (nextState) => {

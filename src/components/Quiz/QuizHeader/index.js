@@ -1,6 +1,4 @@
 export function QuizHeader({ $target, initialState, onClick }) {
-  console.log("Header is running");
-
   this.state = initialState;
 
   $target.addEventListener("click", (e) => {

@@ -3,8 +3,6 @@ import { $ } from "../../utils/selector";
 import { fetchData } from "../../utils/api";
 import { tagFilter } from "../../utils/tagFilter";
 export function Quiz({ $target, initialState }) {
-  console.log("Quizis running");
-
   this.state = {
     quizTableData: [],
     tag: "모두",

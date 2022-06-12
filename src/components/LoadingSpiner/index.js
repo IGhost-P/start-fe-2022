@@ -1,10 +1,6 @@
 export function LoadingSpiner({ $target }) {
-  console.log("LoadingSpiner is running");
-
-  console.log($target);
   this.render = () => {
     const markup = this.generateMarkup();
-    console.log(markup);
     $target.insertAdjacentHTML("beforebegin", markup);
   };
 

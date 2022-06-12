@@ -3,8 +3,6 @@ import { LearnTable, LearnHeader, LoadingSpiner } from "../../components/index";
 import { fetchData } from "../../utils/api";
 import { tagFilter } from "../../utils/tagFilter";
 export function Learn({ $target, initialState }) {
-  console.log("Learn is running");
-
   this.state = {
     learnTableData: [],
     tag: "모두",
