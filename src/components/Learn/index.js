@@ -1,6 +1,7 @@
 import { $ } from "../../utils/selector";
-import { LearnTable } from "../../components/index";
+import { LearnTable, LearnHeader } from "../../components/index";
 import { fetchData } from "../../utils/api";
+import { tagFilter } from "../../utils/tagFilter";
 export function Learn({ $target, initialState }) {
   console.log("Learn is running");
 
@@ -11,7 +12,7 @@ export function Learn({ $target, initialState }) {
 
   this.setState = (nextState) => {
     this.state = { ...this.state, ...nextState };
-    learnTable.setState(this.state.learnTableData);
+    learnTable.setState(tagFilter(this.state.learnTableData, this.state.tag));
   };
 
   const learnTable = new LearnTable({
@@ -19,6 +20,13 @@ export function Learn({ $target, initialState }) {
     initialState: this.state.learnTableData,
   });
 
+  const learnHeader = new LearnHeader({
+    $target: $(".titlewrap", $target),
+    initialState: this.state.tag,
+    onClick: (tag) => {
+      this.setState({ tag });
+    },
+  });
   this.init = async () => {
     const learnTableData = await fetchData("./classData.json");
     this.setState({ learnTableData });
